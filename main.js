@@ -1,36 +1,29 @@
 const render = Render();
-let level = 1
-let time = 1000
+const frogy = Frogame()
+let data = frogy.getSetting();
 
-const round = function (level, time) {
-    let cntfrog = level
-    render.renderer(level)
-    render.counting(level)
-    render.updateLevel(level)
-    render.displayfrog(level)
+const round = function () {
+    render.rendall(data.level)
     setTimeout(function () {
-        if ($('#main').has('i').length) {
-            render.timesUp()
-            render.updateLevel('-')
-            level = 1
-            time = 1000
+        if (data.frogsnum > 0) {
+            frogy.newGame()
+            render.renderEndGame()
         } else {
-            level++
-            time += 1000
-            round(level, time)
+            frogy.levelUp()
+            round()
         }
-    }, time)
+    }, data.level * 1000)
 
 }
 
-
 $('#main').on('click', '.fa-frog', function () {
-    $(this).remove()
-    render.minusfrog()
+    frogy.frogclicked()
+    render.rendererfrogs(data.frogsnum)
 })
 
-$('#start').on('click', function(){
-    round(level,time)
+$('#start').on('click', function () {
+    frogy.newGame()
+    round()
 })
 
 
