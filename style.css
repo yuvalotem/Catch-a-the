@@ -1,0 +1,68 @@
+#container{
+    display: grid;
+    grid-template-areas: 
+    "t t t""m m m""m m m""m m m""m m m" "n n n";
+    height: 97vh;
+    width: 99vw;
+}
+#top{
+    grid-area: t;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: #2ecc71;
+}
+#main{
+    grid-area: m;
+    display: grid;
+    justify-items: center;
+    background-color: #27ae60;
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+#game-menu{
+    grid-area: n;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+#level{
+    background-color: #2ecc71;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+}
+#start{
+    background-color: #3498db;
+    border-color: #2980b9;
+    border-style: solid;
+    height: 97%;
+    width: 99%;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+    cursor: pointer;
+}
+#catched{
+    background-color: #2ecc71;
+    height: 100%;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    align-content: center;
+}
+.timeup{
+    color: red;
+    display: grid;
+    align-items: center;
+}
+.fa-frog{
+    cursor: pointer;
+    position: absolute;
+}
